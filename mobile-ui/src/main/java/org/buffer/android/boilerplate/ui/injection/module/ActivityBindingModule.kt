@@ -9,7 +9,7 @@ import org.buffer.android.boilerplate.ui.injection.scopes.PerActivity
 abstract class ActivityBindingModule {
 
     @PerActivity
-    @ContributesAndroidInjector(modules = arrayOf(BrowseActivityModule::class))
+    @ContributesAndroidInjector(modules = [(BrowseActivityModule::class)])
     abstract fun bindMainActivity(): BrowseActivity
 
 }

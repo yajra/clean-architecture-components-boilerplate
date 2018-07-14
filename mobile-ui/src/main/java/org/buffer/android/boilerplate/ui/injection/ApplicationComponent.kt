@@ -11,8 +11,7 @@ import org.buffer.android.boilerplate.ui.injection.module.ApplicationModule
 import org.buffer.android.boilerplate.ui.injection.scopes.PerApplication
 
 @PerApplication
-@Component(modules = arrayOf(ActivityBindingModule::class, ApplicationModule::class,
-        AndroidSupportInjectionModule::class))
+@Component(modules = [(ActivityBindingModule::class), (ApplicationModule::class), (AndroidSupportInjectionModule::class)])
 interface ApplicationComponent : AndroidInjector<DaggerApplication> {
 
     @Component.Builder

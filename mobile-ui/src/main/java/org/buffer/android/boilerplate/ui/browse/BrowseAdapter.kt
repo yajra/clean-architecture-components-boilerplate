@@ -39,15 +39,9 @@ class BrowseAdapter @Inject constructor(): RecyclerView.Adapter<BrowseAdapter.Vi
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var avatarImage: ImageView
-        var nameText: TextView
-        var titleText: TextView
-
-        init {
-            avatarImage = view.findViewById(R.id.image_avatar)
-            nameText = view.findViewById(R.id.text_name)
-            titleText = view.findViewById(R.id.text_title)
-        }
+        var avatarImage: ImageView = view.findViewById(R.id.image_avatar)
+        var nameText: TextView = view.findViewById(R.id.text_name)
+        var titleText: TextView = view.findViewById(R.id.text_title)
     }
 
 }
