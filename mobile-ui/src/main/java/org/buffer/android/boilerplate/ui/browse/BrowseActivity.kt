@@ -14,6 +14,8 @@ import org.buffer.android.boilerplate.presentation.data.Resource
 import org.buffer.android.boilerplate.presentation.model.BufferooView
 import org.buffer.android.boilerplate.ui.R
 import org.buffer.android.boilerplate.ui.mapper.BufferooMapper
+import org.buffer.android.boilerplate.ui.util.gone
+import org.buffer.android.boilerplate.ui.util.visible
 import org.buffer.android.boilerplate.ui.widget.empty.EmptyListener
 import org.buffer.android.boilerplate.ui.widget.error.ErrorListener
 import javax.inject.Inject
@@ -57,20 +59,20 @@ class BrowseActivity: DaggerAppCompatActivity() {
     }
 
     private fun setupScreenForLoadingState() {
-        progress.visibility = View.VISIBLE
-        recycler_browse.visibility = View.GONE
-        view_empty.visibility = View.GONE
-        view_error.visibility = View.GONE
+        progress.visible()
+        recycler_browse.gone()
+        view_empty.gone()
+        view_error.gone()
     }
 
     private fun setupScreenForSuccess(data: List<BufferooView>?) {
-        view_error.visibility = View.GONE
-        progress.visibility = View.GONE
+        view_error.gone()
+        progress.gone()
         if (data!= null && data.isNotEmpty()) {
             updateListView(data)
-            recycler_browse.visibility = View.VISIBLE
+            recycler_browse.visible()
         } else {
-            view_empty.visibility = View.VISIBLE
+            view_empty.visible()
         }
     }
 
@@ -80,10 +82,10 @@ class BrowseActivity: DaggerAppCompatActivity() {
     }
 
     private fun setupScreenForError(message: String?) {
-        progress.visibility = View.GONE
-        recycler_browse.visibility = View.GONE
-        view_empty.visibility = View.GONE
-        view_error.visibility = View.VISIBLE
+        progress.gone()
+        recycler_browse.gone()
+        view_empty.gone()
+        view_error.visible()
     }
 
     private fun setupViewListeners() {
